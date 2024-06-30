@@ -20,6 +20,14 @@ export const Layout = ({ movie, truncate }: Props) => {
           {movie && truncate(movie?.overview, 150)}
         </div>
       </div>
+      <div className="flex mt-4 ml-8">
+        <button className="text-white bg-[#4a5568] px-4 py-2 rounded-md font-semibold mr-4">
+          Play
+        </button>
+        <button className="text-white bg-[#4a5568] px-4 py-2 rounded-md font-semibold">
+          My List
+        </button>
+      </div>
       <div className="h-[7.4rem] bg-gradual-gradient" />
     </header>
   );
