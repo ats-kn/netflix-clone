@@ -16,17 +16,17 @@ export const Layout = ({ movie, truncate }: Props) => {
     >
       <div className="ml-8 pt-36">
         <h1 className="text-6xl font-extrabold pb-1">{movie?.name}</h1>
+        <div className="flex mt-4 ml-8">
+          <button className="text-white bg-[#4a5568] px-4 py-2 rounded-md font-semibold mr-4">
+            Play
+          </button>
+          <button className="text-white bg-[#4a5568] px-4 py-2 rounded-md font-semibold">
+            My List
+          </button>
+        </div>
         <div className="w-[45rem] leading-[1.3] pt-4 text-sm max-w-[360px] h-[80px]">
           {movie && truncate(movie?.overview, 150)}
         </div>
-      </div>
-      <div className="flex mt-4 ml-8">
-        <button className="text-white bg-[#4a5568] px-4 py-2 rounded-md font-semibold mr-4">
-          Play
-        </button>
-        <button className="text-white bg-[#4a5568] px-4 py-2 rounded-md font-semibold">
-          My List
-        </button>
       </div>
       <div className="h-[7.4rem] bg-gradual-gradient" />
     </header>
