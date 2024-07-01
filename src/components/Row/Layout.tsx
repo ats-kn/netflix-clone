@@ -12,6 +12,7 @@ export type Props = {
   isLargeRow?: boolean;
 };
 
+// LayoutProps：コンポーネントの表示に必要な引数の形式を定義
 type LayoutProps = {
   title: string;
   isLargeRow?: boolean;
@@ -20,6 +21,7 @@ type LayoutProps = {
   handleClick: (movie: Movie) => void;
 };
 
+// Options：YouTubeの再生設定
 type Options = {
   height: string;
   width: string;

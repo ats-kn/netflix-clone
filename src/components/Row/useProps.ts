@@ -27,7 +27,9 @@ export const useProps = (fetchUrl: string) => {
     fetchData();
   }, [fetchUrl]);
 
+  // 動画再生ボタンをクリックした時に
   const handleClick = async (movie: Movie) => {
+    // 予告映像を閉じるための条件分岐
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
