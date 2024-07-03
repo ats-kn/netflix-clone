@@ -9,7 +9,6 @@ import YouTube from "react-youtube";
 export type Props = {
   title: string;
   fetchUrl: string;
-  isLargeRow?: boolean;
 };
 
 // LayoutProps：コンポーネントの表示に必要な引数の形式を定義
@@ -34,7 +33,6 @@ type Options = {
 export const Layout = ({
   title,
   movies,
-  isLargeRow,
   handleClick,
   trailerUrl,
   isLoading,
@@ -57,12 +55,8 @@ export const Layout = ({
           movies.map((movie) => (
             <img
               key={movie.id}
-              className={`object-contain w-full max-h-24 m-2 transform transition-transform duration-450 ${
-                isLargeRow ? "max-h-60 hover:scale-110" : "hover:scale-108"
-              }`}
-              src={`${image_url}${
-                isLargeRow ? movie.poster_path : movie.backdrop_path
-              }`}
+              className="object-contain w-full max-h-24 m-2 transform transition-transform duration-450"
+              src={`${image_url}${movie.backdrop_path}`}
               onClick={() => handleClick(movie)}
               alt={movie.name}
             />
