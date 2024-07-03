@@ -12,7 +12,10 @@ export const useProps = (fetchUrl: string, title: string) => {
   // fetchUrlを元にAPIからデータを取得
   const fetchData = async () => {
     const request = await axios.get(fetchUrl);
-    return request.data.results.map((movie: Movie) => ({
+
+    // 取得するデータを10件に制限
+    // 配列に対してsliceを使って10件に制限
+    return request.data.results.slice(0, 10).map((movie: Movie) => ({
       id: movie.id,
       name: movie.name,
       poster_path: movie.poster_path,
