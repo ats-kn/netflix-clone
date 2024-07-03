@@ -18,10 +18,20 @@ type LayoutProps = {
   isLoading: boolean;
 };
 
+// Options：YouTubeの再生設定
+type Options = {
+  height: string;
+  width: string;
+  playerVars: {
+    autoplay: 0 | 1 | undefined;
+  };
+};
+
 export const Layout = ({
   title,
   movies,
   handleClick,
+  trailerUrl,
   isLoading,
 }: LayoutProps) => {
   const image_url = "https://image.tmdb.org/t/p/original";
@@ -36,6 +46,12 @@ export const Layout = ({
               key={movie.id}
               className="object-contain w-full max-h-24 m-2 transform transition-transform duration-450"
               src={`${image_url}${movie.backdrop_path}`}
+              className={`object-contain w-full max-h-24 m-2 transform transition-transform duration-450 ${
+                isLargeRow ? "max-h-60 hover:scale-110" : "hover:scale-108"
+              }`}
+              src={`${image_url}${
+                isLargeRow ? movie.poster_path : movie.backdrop_path
+              }`}
               onClick={() => handleClick(movie)}
               alt={movie.name}
             />
